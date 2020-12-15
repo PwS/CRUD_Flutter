@@ -84,40 +84,6 @@ class _AddDataWidgetState extends State<AddDataWidget> {
                             ],
                           ),
                         ),
-                        /*Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: Column(
-                            children: <Widget>[
-                              Text('Transaction Type'),
-                              ListTile(
-                                title: const Text('Earning'),
-                                leading: Radio(
-                                  value: TransType.earning,
-                                  groupValue: _transType,
-                                  onChanged: (TransType value) {
-                                    setState(() {
-                                      _transType = value;
-                                      transType = 'earning';
-                                    });
-                                  },
-                                ),
-                              ),
-                              ListTile(
-                                title: const Text('Expense'),
-                                leading: Radio(
-                                  value: TransType.expense,
-                                  groupValue: _transType,
-                                  onChanged: (TransType value) {
-                                    setState(() {
-                                      _transType = value;
-                                      transType = 'expense';
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),*/
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                           child: Column(
