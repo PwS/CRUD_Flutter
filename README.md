@@ -1,6 +1,6 @@
 # items_app
 
-CRUD About Item Name ,Quantity , Price and total Price
+CRUD About Item Name ,Quantity , Price and total Price With SQLite
 
 ```bash
 Tutorial Refference
