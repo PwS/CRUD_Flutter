@@ -26,19 +26,6 @@ class DbConn {
     return database;
   }
 
-  /*Future initDB() async {
-    var directory = await getApplicationDocumentsDirectory();
-    var path = join(directory.path, 'stock.db');
-    var database =
-        await openDatabase(path, version: 1, onCreate: _onCreatingDatabase);
-    return database;
-  }
-
-  _onCreatingDatabase(Database database, int version) async {
-    await database.execute(
-        "CREATE TABLE items(id INTEGER PRIMARY KEY, date TEXT , name TEXT , quantity INTEGER , price INTEGER)");
-  }*/
-
   Future<Items> insertItems(Items items) async {
     final Database db = await database;
 
@@ -66,12 +53,6 @@ class DbConn {
 
   Future<int> countTotal() async {
     final Database db = await database;
-    /* final int sumEarning = Sqflite.firstIntValue(await db
-        .rawQuery('SELECT SUM(amount) FROM trans where type = "earning"'));
-    final int sumExpense = Sqflite.firstIntValue(await db
-        .rawQuery('SELECT SUM(amount) FROM trans WHERE type ="expense"'));
-    return ((sumEarning == null ? 0 : sumEarning) -
-        (sumExpense == null ? 0 : sumExpense));*/
 
     final int total = Sqflite.firstIntValue(
         await db.rawQuery('SELECT SUM(price) FROM items where id ="id"'));
