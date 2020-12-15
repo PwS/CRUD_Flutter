@@ -5,8 +5,6 @@ import 'package:stock_app/database/dbconn.dart';
 
 import 'package:stock_app/models/items.dart';
 
-enum TransType { earning, expense }
-
 class EditDataWidget extends StatefulWidget {
   EditDataWidget(this.items);
 

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:stock_app/database/dbconn.dart';
 import 'models/items.dart';
 
-enum TransType { earning, expense }
-
 class AddDataWidget extends StatefulWidget {
   AddDataWidget();
 
