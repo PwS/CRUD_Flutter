@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stock_app/models/items.dart';
-import 'detailwidget.dart';
+import 'package:stock_app/ui/widget/widget.dart';
 
 class ItemsList extends StatelessWidget {
   final List<Items> items;

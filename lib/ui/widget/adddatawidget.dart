@@ -1,21 +1,14 @@
-import 'package:intl/intl.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
-import 'package:flutter/material.dart';
-import 'package:stock_app/database/dbconn.dart';
+part of 'widget.dart';
 
-import 'package:stock_app/models/items.dart';
-
-class EditDataWidget extends StatefulWidget {
-  EditDataWidget(this.items);
-
-  final Items items;
+class AddDataWidget extends StatefulWidget {
+  AddDataWidget();
 
   @override
-  _EditDataWidgetState createState() => _EditDataWidgetState();
+  _AddDataWidgetState createState() => _AddDataWidgetState();
 }
 
-class _EditDataWidgetState extends State<EditDataWidget> {
-  _EditDataWidgetState();
+class _AddDataWidgetState extends State<AddDataWidget> {
+  _AddDataWidgetState();
 
   DbConn dbconn = DbConn();
   final _addFormKey = GlobalKey<FormState>();
@@ -27,21 +20,10 @@ class _EditDataWidgetState extends State<EditDataWidget> {
   final _priceController = TextEditingController();
 
   @override
-  void initState() {
-    _itemsId = widget.items.itemsId;
-    _itemsDateController.text = widget.items.itemsDate;
-    _itemsNameController.text = widget.items.itemsName;
-    _quantityController.text = widget.items.itemsQuantity.toString();
-    _priceController.text = widget.items.itemsPrice.toString();
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Data'),
+        title: Text('Add Data'),
       ),
       body: Form(
         key: _addFormKey,
@@ -87,7 +69,7 @@ class _EditDataWidgetState extends State<EditDataWidget> {
                                 ),
                                 validator: (value) {
                                   if (value.isEmpty) {
-                                    return 'Please enter items name';
+                                    return 'Please enter transaction name';
                                   }
                                   return null;
                                 },
@@ -102,7 +84,7 @@ class _EditDataWidgetState extends State<EditDataWidget> {
                             children: <Widget>[
                               Text('Quantity'),
                               TextFormField(
-                                controller: _priceController,
+                                controller: _quantityController,
                                 decoration: const InputDecoration(
                                   hintText: 'Quantity',
                                 ),
@@ -122,16 +104,16 @@ class _EditDataWidgetState extends State<EditDataWidget> {
                           margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
                           child: Column(
                             children: <Widget>[
-                              Text('Amount'),
+                              Text('Price'),
                               TextFormField(
                                 controller: _priceController,
                                 decoration: const InputDecoration(
-                                  hintText: 'Amount',
+                                  hintText: 'Price',
                                 ),
                                 keyboardType: TextInputType.number,
                                 validator: (value) {
                                   if (value.isEmpty) {
-                                    return 'Please enter amount';
+                                    return 'Please enter price';
                                   }
                                   return null;
                                 },
@@ -151,7 +133,7 @@ class _EditDataWidgetState extends State<EditDataWidget> {
                                     _addFormKey.currentState.save();
                                     final initDB = dbconn.initDB();
                                     initDB.then((db) async {
-                                      await dbconn.updateItems(Items(
+                                      await dbconn.insertItems(Items(
                                           itemsId: _itemsId,
                                           itemsDate: _itemsDateController.text,
                                           itemsName: _itemsNameController.text,
@@ -161,13 +143,10 @@ class _EditDataWidgetState extends State<EditDataWidget> {
                                               _priceController.text)));
                                     });
 
-                                    Navigator.popUntil(
-                                        context,
-                                        ModalRoute.withName(
-                                            Navigator.defaultRouteName));
+                                    Navigator.pop(context);
                                   }
                                 },
-                                child: Text('Update',
+                                child: Text('Save',
                                     style: TextStyle(color: Colors.white)),
                                 color: Colors.blue,
                               )

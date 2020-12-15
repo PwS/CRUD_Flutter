@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'database/dbconn.dart';
-import 'editdatawidget.dart';
-import 'models/items.dart';
+part of 'widget.dart';
 
 class DetailWidget extends StatefulWidget {
   DetailWidget(this.items);

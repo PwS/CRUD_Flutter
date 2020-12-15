@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stock_app/adddatawidget.dart';
+import 'package:stock_app/ui/widget/widget.dart';
 import 'dart:async';
 import 'package:stock_app/models/items.dart';
 import 'package:stock_app/database/dbconn.dart';
-import 'package:stock_app/itemslist.dart';
+import 'package:stock_app/ui/itemslist.dart';
 
 void main() async {
   await DbConn;
@@ -58,7 +58,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   DbConn dbconn = DbConn();
   List<Items> itemsList;
-  int totalCount = 0;
+  int totalCount = 0 ;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (context, snapshot)  {
             return Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text('Total: $totalCount', style: Theme.of(context).textTheme.title),
+              child: Text('Total: \$$totalCount', style: Theme.of(context).textTheme.title),
             );
           },
         ),
