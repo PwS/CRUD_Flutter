@@ -20,7 +20,6 @@ class Items {
 
   @override
   String toString() {
-    // TODO: implement toString
     return 'Items{id: $itemsId,itemsName: $itemsName, itemsQuantity: $itemsQuantity, itemsPrice: $itemsPrice}';
   }
 }
