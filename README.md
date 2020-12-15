@@ -1,4 +1,4 @@
-# stock_app
+# items_app
 
 CRUD About Item Name ,Quantity , Price and total Price
 
