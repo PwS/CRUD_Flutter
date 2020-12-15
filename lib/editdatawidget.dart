@@ -43,7 +43,7 @@ class _EditDataWidgetState extends State<EditDataWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Data'),
+        title: Text('Edit Data'),
       ),
       body: Form(
         key: _addFormKey,
