@@ -1,16 +1,13 @@
-# stock_app
+# items_app
 
 CRUD About Item Name ,Quantity , Price and total Price
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+Tutorial Refference
+https://www.djamware.com/post/5ebb3fcf9c9e8f5505054768/flutter-tutorial-sqlite-offline-crud-ios-and-android-apps
+```
+- [✓] HomePage
+- [✓] Display Data
+- [✓] Edit Data
+- [✓] Create Data
+- [✓] Delete Data
