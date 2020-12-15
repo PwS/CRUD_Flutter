@@ -1,4 +1,4 @@
-# items_app
+# CRUD
 
 CRUD About Item Name ,Quantity , Price and total Price With SQLite
 
