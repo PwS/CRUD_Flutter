@@ -7,9 +7,6 @@ import 'package:stock_app/ui/itemslist.dart';
 
 void main() async {
   await DbConn;
-  MaterialApp(
-    debugShowCheckedModeBanner: false,
-  );
   runApp(MyApp());
 
 }
@@ -19,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //RemoveDebugBanner
       title: 'Transactions',
       theme: ThemeData(
         // This is the theme of your application.
